@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:editor="UnityEditor.UIElements" xmlns:engine="UnityEngine.UIElements" xmlns="UnityEditor.Overlays" elementFormDefault="qualified" targetNamespace="UnityEditor.U2D.Animation.SpriteLibraryEditor" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="UnityEngine.UIElements.xsd" namespace="UnityEngine.UIElements" />
+<<<<<<< HEAD
+=======
+  <xs:complexType name="EditorBottomToolbarType">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="engine:VisualElementType">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="engine:VisualElement" />
+        </xs:sequence>
+        <xs:attribute default="" name="name" type="xs:string" use="optional" />
+        <xs:attribute default="" name="view-data-key" type="xs:string" use="optional" />
+        <xs:attribute default="Position" name="picking-mode" type="engine:VisualElement_picking-mode_Type" use="optional" />
+        <xs:attribute default="" name="tooltip" type="xs:string" use="optional" />
+        <xs:attribute default="None" name="usage-hints" type="engine:VisualElement_usage-hints_Type" use="optional" />
+        <xs:attribute default="0" name="tabindex" type="xs:int" use="optional" />
+        <xs:attribute default="false" name="focusable" type="xs:boolean" use="optional" />
+        <xs:attribute default="" name="class" type="xs:string" use="optional" />
+        <xs:attribute default="" name="content-container" type="xs:string" use="optional" />
+        <xs:attribute default="" name="style" type="xs:string" use="optional" />
+        <xs:anyAttribute processContents="lax" />
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EditorBottomToolbar" substitutionGroup="engine:VisualElement" xmlns:q1="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q1:EditorBottomToolbarType" />
+  <xs:complexType name="EditorTabHeaderType">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="engine:VisualElementType">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="engine:VisualElement" />
+        </xs:sequence>
+        <xs:attribute default="" name="name" type="xs:string" use="optional" />
+        <xs:attribute default="" name="view-data-key" type="xs:string" use="optional" />
+        <xs:attribute default="Position" name="picking-mode" type="engine:VisualElement_picking-mode_Type" use="optional" />
+        <xs:attribute default="" name="tooltip" type="xs:string" use="optional" />
+        <xs:attribute default="None" name="usage-hints" type="engine:VisualElement_usage-hints_Type" use="optional" />
+        <xs:attribute default="0" name="tabindex" type="xs:int" use="optional" />
+        <xs:attribute default="false" name="focusable" type="xs:boolean" use="optional" />
+        <xs:attribute default="" name="class" type="xs:string" use="optional" />
+        <xs:attribute default="" name="content-container" type="xs:string" use="optional" />
+        <xs:attribute default="" name="style" type="xs:string" use="optional" />
+        <xs:anyAttribute processContents="lax" />
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EditorTabHeader" substitutionGroup="engine:VisualElement" xmlns:q2="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q2:EditorTabHeaderType" />
+  <xs:complexType name="EditorMainWindowType">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="engine:VisualElementType">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="engine:VisualElement" />
+        </xs:sequence>
+        <xs:attribute default="" name="name" type="xs:string" use="optional" />
+        <xs:attribute default="" name="view-data-key" type="xs:string" use="optional" />
+        <xs:attribute default="Position" name="picking-mode" type="engine:VisualElement_picking-mode_Type" use="optional" />
+        <xs:attribute default="" name="tooltip" type="xs:string" use="optional" />
+        <xs:attribute default="None" name="usage-hints" type="engine:VisualElement_usage-hints_Type" use="optional" />
+        <xs:attribute default="0" name="tabindex" type="xs:int" use="optional" />
+        <xs:attribute default="false" name="focusable" type="xs:boolean" use="optional" />
+        <xs:attribute default="" name="class" type="xs:string" use="optional" />
+        <xs:attribute default="" name="content-container" type="xs:string" use="optional" />
+        <xs:attribute default="" name="style" type="xs:string" use="optional" />
+        <xs:anyAttribute processContents="lax" />
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EditorMainWindow" substitutionGroup="engine:VisualElement" xmlns:q3="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q3:EditorMainWindowType" />
+  <xs:complexType name="EditorTopToolbarType">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="engine:VisualElementType">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="engine:VisualElement" />
+        </xs:sequence>
+        <xs:attribute default="" name="name" type="xs:string" use="optional" />
+        <xs:attribute default="" name="view-data-key" type="xs:string" use="optional" />
+        <xs:attribute default="Position" name="picking-mode" type="engine:VisualElement_picking-mode_Type" use="optional" />
+        <xs:attribute default="" name="tooltip" type="xs:string" use="optional" />
+        <xs:attribute default="None" name="usage-hints" type="engine:VisualElement_usage-hints_Type" use="optional" />
+        <xs:attribute default="0" name="tabindex" type="xs:int" use="optional" />
+        <xs:attribute default="false" name="focusable" type="xs:boolean" use="optional" />
+        <xs:attribute default="" name="class" type="xs:string" use="optional" />
+        <xs:attribute default="" name="content-container" type="xs:string" use="optional" />
+        <xs:attribute default="" name="style" type="xs:string" use="optional" />
+        <xs:anyAttribute processContents="lax" />
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EditorTopToolbar" substitutionGroup="engine:VisualElement" xmlns:q4="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q4:EditorTopToolbarType" />
+>>>>>>> 0282d0c2ae748e265e4b27b1c68abc99f16f15ab
   <xs:simpleType name="GridView_selection-type_Type">
     <xs:restriction base="xs:string">
       <xs:enumeration value="None" />
@@ -23,12 +110,17 @@
         <xs:attribute default="" name="style" type="xs:string" use="optional" />
         <xs:attribute default="" name="binding-path" type="xs:string" use="optional" />
         <xs:attribute default="30" name="item-height" type="xs:int" use="optional" />
+<<<<<<< HEAD
         <xs:attribute default="Single" name="selection-type" xmlns:q1="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q1:GridView_selection-type_Type" use="optional" />
+=======
+        <xs:attribute default="Single" name="selection-type" xmlns:q5="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q5:GridView_selection-type_Type" use="optional" />
+>>>>>>> 0282d0c2ae748e265e4b27b1c68abc99f16f15ab
         <xs:attribute default="false" name="show-border" type="xs:boolean" use="optional" />
         <xs:anyAttribute processContents="lax" />
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
+<<<<<<< HEAD
   <xs:element name="GridView" substitutionGroup="engine:VisualElement" xmlns:q2="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q2:GridViewType" />
   <xs:complexType name="EditorBottomToolbarType">
     <xs:complexContent mixed="false">
@@ -93,6 +185,9 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="LabelsTab" substitutionGroup="engine:VisualElement" xmlns:q5="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q5:LabelsTabType" />
+=======
+  <xs:element name="GridView" substitutionGroup="engine:VisualElement" xmlns:q6="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q6:GridViewType" />
+>>>>>>> 0282d0c2ae748e265e4b27b1c68abc99f16f15ab
   <xs:complexType name="CategoriesTabType">
     <xs:complexContent mixed="false">
       <xs:restriction base="engine:VisualElementType">
@@ -113,8 +208,13 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
+<<<<<<< HEAD
   <xs:element name="CategoriesTab" substitutionGroup="engine:VisualElement" xmlns:q6="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q6:CategoriesTabType" />
   <xs:complexType name="EditorTabHeaderType">
+=======
+  <xs:element name="CategoriesTab" substitutionGroup="engine:VisualElement" xmlns:q7="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q7:CategoriesTabType" />
+  <xs:complexType name="LabelsTabType">
+>>>>>>> 0282d0c2ae748e265e4b27b1c68abc99f16f15ab
     <xs:complexContent mixed="false">
       <xs:restriction base="engine:VisualElementType">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -134,6 +234,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
+<<<<<<< HEAD
   <xs:element name="EditorTabHeader" substitutionGroup="engine:VisualElement" xmlns:q7="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q7:EditorTabHeaderType" />
   <xs:complexType name="EditorMainWindowType">
     <xs:complexContent mixed="false">
@@ -156,4 +257,7 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="EditorMainWindow" substitutionGroup="engine:VisualElement" xmlns:q8="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q8:EditorMainWindowType" />
+=======
+  <xs:element name="LabelsTab" substitutionGroup="engine:VisualElement" xmlns:q8="UnityEditor.U2D.Animation.SpriteLibraryEditor" type="q8:LabelsTabType" />
+>>>>>>> 0282d0c2ae748e265e4b27b1c68abc99f16f15ab
 </xs:schema>
