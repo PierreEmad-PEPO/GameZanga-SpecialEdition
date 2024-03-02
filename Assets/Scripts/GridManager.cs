@@ -1,13 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public static class GridManager
 {
     static List<List<GameObject>> grid;
-
+    static Dictionary<PlantEnum, Sprite[,]> plantSprites = new Dictionary<PlantEnum, Sprite[,]>();
+    static int dimensionLenthe = 2; // for Now
+    static Sprite emptySprite;
     public static List<List<GameObject>> Grid { get { return grid; } }
+    public static int DimensionLenthe { get {return dimensionLenthe;} }
 
+    public static Sprite EmptySprite { get { return emptySprite; } }
     public static void Initialize()
     {
         grid = new List<List<GameObject>>();
@@ -21,5 +27,31 @@ public static class GridManager
             }
             grid.Add(row);
         }
+
+        emptySprite = Resources.Load<Sprite>("emptySprite");
+
+        foreach(string name in Enum.GetNames(typeof(PlantEnum)))
+        {
+            Sprite[,] sprites = new Sprite[2, 2];
+            for (int i = 0;i < dimensionLenthe ;i++)
+            {
+                for (int j = 0; j < dimensionLenthe; j++)
+                {
+                    sprites[i,j] = Resources.Load<Sprite>( name + i.ToString() + j.ToString());
+                }
+            }
+            PlantEnum plant;
+            
+            if (Enum.TryParse(name, out plant))
+                plantSprites.Add(plant, sprites);
+            else
+                Debug.Log("Errrrrrrrrrrrrrrrrror");
+
+        }
+    }
+
+    public static Sprite GetPlantSprite(PlantEnum plant, int i, int j)
+    {
+        return plantSprites[plant][i, j];
     }
 }
