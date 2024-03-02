@@ -8,11 +8,10 @@ public static class GridManager
 {
     static List<List<GameObject>> grid;
     static Dictionary<PlantEnum, Sprite[,]> plantSprites = new Dictionary<PlantEnum, Sprite[,]>();
-    static int dimensionLenthe = 2; // for Now
+    static int dimensionLength = 2; // for Now
     static Sprite emptySprite;
     public static List<List<GameObject>> Grid { get { return grid; } }
-    public static int DimensionLenthe { get {return dimensionLenthe;} }
-
+    public static int DimensionLength { get {return dimensionLength;} }
     public static Sprite EmptySprite { get { return emptySprite; } }
     public static void Initialize()
     {
@@ -33,9 +32,9 @@ public static class GridManager
         foreach(string name in Enum.GetNames(typeof(PlantEnum)))
         {
             Sprite[,] sprites = new Sprite[2, 2];
-            for (int i = 0;i < dimensionLenthe ;i++)
+            for (int i = 0;i < dimensionLength ;i++)
             {
-                for (int j = 0; j < dimensionLenthe; j++)
+                for (int j = 0; j < dimensionLength; j++)
                 {
                     sprites[i,j] = Resources.Load<Sprite>( name + i.ToString() + j.ToString());
                 }

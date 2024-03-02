@@ -18,8 +18,12 @@ public class Test : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) 
         {
             Tuple<int, int> pos = InputManager.MouseToGrid();
-            GridManager.Grid[pos.Item1][pos.Item2].GetComponent<Cell>().click(PlantEnum.gazr);
-            GridManager.Grid[pos.Item1][pos.Item2].GetComponent<Cell>().IsCorruption = true;
+            Debug.Log(pos.Item1 + "  " + pos.Item2);
+            if (pos.Item1 <= 3 && pos.Item2 <= 3)
+            {
+                GridManager.Grid[pos.Item1][pos.Item2].GetComponent<Cell>().Click(PlantEnum.gazr);
+                //GridManager.Grid[pos.Item1][pos.Item2].GetComponent<Cell>().StartCorruption();
+            }
         }
     }
 }

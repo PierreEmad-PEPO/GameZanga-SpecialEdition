@@ -6,15 +6,22 @@ using UnityEngine.UIElements;
 
 public class Cell : MonoBehaviour
 {
-    [SerializeField] bool isObistecal;
-    private SpriteRenderer spriteRn;
-    private PlantEnum plant;
-    private int growth = 0;
-    private int corruption = 0;
-    private bool isPlanting = false;
-    private bool isCorruption = false;
+    [SerializeField] bool isObstacle;
 
-    public bool IsCorruption { get { return isCorruption; } set { isCorruption = value; } }
+    [Range(0, 100)] private int growth = 0;
+    [Range(0, 99)] private int corruption = 0;
+    private int progressPerSec = 10;
+    private int growthFactor = 1;
+    private int corruptionFactor = 0;
+
+    private SpriteRenderer spriteRn;
+
+    private bool isPlanting = false;
+    private PlantEnum plant;
+
+    public bool IsObstacle{ get { return isObstacle; } }
+    public bool IsPlanting {  get { return isPlanting; } }
+    public int Corruption { get { return corruption; } }
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +34,13 @@ public class Cell : MonoBehaviour
     {
         if (isPlanting)
             return;
+        // you can or not
         isPlanting = true;
         this.plant = plant;
-        growth = 0;
         corruption = 0;
+        growth = 0;
         // reduce Money;
+        UpdateSprite();
     }
 
     public void harvest ()
@@ -41,13 +50,13 @@ public class Cell : MonoBehaviour
        ChangeToEmpty();
     }
 
-    public void click(PlantEnum plant)
+    public void Click(PlantEnum plant)
     {
-        if (growth >= 99)
+        if (growth >= 100)
         {
             harvest();
         }
-        else if (!isPlanting)
+        else
         {
             Seed(plant);
         }
@@ -60,37 +69,40 @@ public class Cell : MonoBehaviour
         corruption = 0;
         growth = 0;
     }
+
+    public void StartCorruption()
+    {
+        corruptionFactor++;
+    }
+
     void UpdateData()
     {
-        if (isCorruption && isPlanting && corruption <= 90)
-        {
-            corruption += 10;
-            if (corruption > 99)
-                corruption = 99;
-            Debug.Log(corruption);
-        }
-        if (corruption >= 99)
-        {
-            ChangeToEmpty();
-        }
-        else if (isPlanting && growth <= 90)
-        {
-            growth += 10;
-        }
         if (isPlanting)
         {
-            int growthLevel = (growth * (GridManager.DimensionLenthe - 1 ) / 100);
-            int corruptionLevel = (corruption * (GridManager.DimensionLenthe ) / 100);
-            spriteRn.sprite = GridManager.GetPlantSprite(plant, growthLevel, corruptionLevel);
+            UpdateSprite();
+
+            if (corruption >= 99)
+                ChangeToEmpty ();
+
+            growth += (growthFactor * progressPerSec);
+            corruption += (corruptionFactor * progressPerSec);
+
+            if (growth > 100)
+                growth = 100;
+            if (corruption > 99)
+                corruption = 99;
         }
 
+    }
+    void UpdateSprite()
+    {
     }
     IEnumerator UpdateCell()
     {
         while (true) 
         {
-            yield return new WaitForSeconds(1);
             UpdateData();
+            yield return new WaitForSeconds(1);
         }
     }
 }
