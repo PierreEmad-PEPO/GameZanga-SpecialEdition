@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Call : MonoBehaviour
+public class Cell : MonoBehaviour
 {
     private Sprite sprite;
 
