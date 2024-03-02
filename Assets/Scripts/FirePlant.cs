@@ -5,7 +5,7 @@ using UnityEngine;
 public class FirePlant : BasePlant
 {
     [SerializeField]
-    private int totalColliction;
+    private int totalCollection;
     private static int objectNumber = 0;
 
     protected override void Start()
@@ -13,7 +13,7 @@ public class FirePlant : BasePlant
         base.Start();
         objectNumber++;
 
-        if (objectNumber == totalColliction)
+        if (objectNumber == totalCollection)
         {
             GiveHimSeed();
         }
