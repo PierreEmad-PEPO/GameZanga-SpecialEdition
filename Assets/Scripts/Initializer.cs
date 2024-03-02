@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Initializer : MonoBehaviour
 {
-    [SerializeField] Vector2 startPoint;
+    Vector2 startPoint;
 
     void Awake()
     {
-        InputManager.Initialize(startPoint);
+        GridManager.Initialize();
+        InputManager.Initialize(GridManager.Grid[0][0].transform.position);
     }
 
     // Update is called once per frame
