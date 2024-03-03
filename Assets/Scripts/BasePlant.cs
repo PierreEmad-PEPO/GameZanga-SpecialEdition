@@ -21,6 +21,8 @@ public abstract class BasePlant : MonoBehaviour
     [SerializeField]
     protected int damagePreSecond = 10;
 
+    protected string description = "";
+
     protected int moneyTimer = 0;
 
     protected int corruptionCount = 0;
@@ -38,6 +40,8 @@ public abstract class BasePlant : MonoBehaviour
     public int Health { get { return health; } }
     public int Row {  get { return row; } set { row = value; } }
     public int Col {  get { return col; } set { col = value; } }
+
+    public string Description { get { return description; } }
 
     protected virtual void Start()
     {
