@@ -8,10 +8,7 @@ public class GoldenPlant : BasePlant
     {
         while (true)
         {
-            if (isCorruption)
-            {
-                health -= damagePreSecond;
-            }
+            health -= (damagePreSecond * corruptionCount);
             if (health <= 0)
                 Destroy(gameObject);
             moneyTimer++;

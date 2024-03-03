@@ -20,13 +20,17 @@ public abstract class BasePlant : MonoBehaviour
     protected int moneyTimer = 0;
 
     protected int health = 100;
-    protected int damagePreSecond = 0;
+    protected int damagePreSecond = 10;
+    protected int corruptionCount = 0;
 
     protected bool isCorruption = false;
     protected SpriteRenderer spriteRn;
 
     public int Price { get { return price; } }
-    public bool IsCorruption { get { return isCorruption; } }
+    public bool IsCorruption { get { return isCorruption; } set { isCorruption = value; } }
+
+    public int CorruptionCount { get { return corruptionCount; } set {  corruptionCount = value; } }
+    public int Health { get { return health; } }
 
     protected virtual void Start()
     {
@@ -38,10 +42,7 @@ public abstract class BasePlant : MonoBehaviour
     {
         for (int i = 0; i < growDuration; i++) 
         {
-            if (isCorruption)
-            {
-                health -= damagePreSecond;
-            }
+            health -= (damagePreSecond * corruptionCount);
             if (health <= 0)
                 Destroy(gameObject);
             spriteRn.sprite = sprites[(i * sprites.Count / growDuration)];

@@ -22,10 +22,7 @@ public class DroseraPlant : BasePlant
     {
         while (true)
         {
-            if (isCorruption)
-            {
-                health -= damagePreSecond;
-            }
+            health -= (damagePreSecond * corruptionCount);
             if (health <= 0)
                 Destroy(gameObject);
             moneyTimer++;
