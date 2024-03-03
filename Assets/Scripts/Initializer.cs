@@ -11,6 +11,7 @@ public class Initializer : MonoBehaviour
     {
         GridManager.Initialize();
         InputManager.Initialize(GridManager.Grid[0][0].transform.position);
+        ScreenUtils.Initialize();
     }
 
     // Update is called once per frame

@@ -13,17 +13,13 @@ public class Enemy : MonoBehaviour
     GameObject targetGameObject = null;
     float speed = 2f;
 
-    int rangeX = 10;
-    int rangeY = 5;
     bool willDestroy = false;
     bool once = true;
 
-    float screenWidth;
-    float screenHeight;
+
 
     private void Start()
     {
-        Initialize();
         startPos = GenratPointOutsideScreen();
         transform.position = startPos;
 
@@ -72,20 +68,20 @@ public class Enemy : MonoBehaviour
         switch(randomSide)
         {
             case 0: // up
-                pos.y = rangeY;
-                pos.x = Random.Range(-rangeX, rangeX);
+                pos.y = ScreenUtils.ScreenTop + 1f;
+                pos.x = Random.Range(ScreenUtils.ScreenLeft , ScreenUtils.ScreenRight);
                 break;
             case 1: // down
-                pos.y = -rangeY;
-                pos.x = Random.Range(-rangeX, rangeX);
+                pos.y = ScreenUtils.ScreenBottom - 1f;
+                pos.x = Random.Range(ScreenUtils.ScreenLeft , ScreenUtils.ScreenRight);
                 break;
             case 2: // right
-                pos.y = Random.Range(-rangeY,rangeY);
-                pos.x = rangeX;
+                pos.y = Random.Range(ScreenUtils.ScreenBottom, ScreenUtils.ScreenTop);
+                pos.x = ScreenUtils.ScreenRight + 1;
                 break;
             case 3: // Left
-                pos.y = Random.Range(-rangeY, rangeY);
-                pos.x = -rangeX;
+                pos.y = Random.Range(ScreenUtils.ScreenBottom , ScreenUtils.ScreenTop);
+                pos.x = ScreenUtils.ScreenLeft - 1;
                 break;
         }
 
@@ -137,22 +133,5 @@ public class Enemy : MonoBehaviour
             targetPlant.CorruptionCount--;
         }
         Destroy(gameObject);
-    }
-
-    public void Initialize()
-    {
-        rangeX = Screen.width;
-        rangeY = Screen.height;
-
-        float screenZ = -Camera.main.transform.position.z;
-        Vector3 lowerLeftCornerScreen = new Vector3(0, 0, screenZ);
-        Vector3 upperRightCornerScreen = new Vector3(
-            rangeX, rangeY, screenZ);
-        Vector3 upperRightCornerWorld =
-            Camera.main.ScreenToWorldPoint(upperRightCornerScreen);
-
-        rangeX = (int)(upperRightCornerScreen.x );
-        rangeY = (int)(upperRightCornerScreen.y );
-
     }
 }

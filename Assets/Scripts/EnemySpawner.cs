@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpwaner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
     GameObject enemyPrefab;
@@ -14,7 +14,7 @@ public class EnemySpwaner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        duration = Random.Range(30,60);
+        duration = Random.Range(10,10);
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class EnemySpwaner : MonoBehaviour
         {
             int count = Random.Range(0, 3);
             SpawnWave(count);
-            duration = Random.Range(30, 60);
+            duration = Random.Range(10, 10);
             elapsedTime = 0;
         }
         elapsedTime += Time.deltaTime;
