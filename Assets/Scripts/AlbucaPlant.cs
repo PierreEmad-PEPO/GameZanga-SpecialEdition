@@ -24,7 +24,7 @@ public class AlbucaPlant : BasePlant
         {
             health -= (damagePreSecond * corruptionCount);
             if (health <= 0)
-                Destroy(gameObject);
+                DestroyPlant();
             moneyTimer++;
 
             if (moneyTimer >= moneyDuration)

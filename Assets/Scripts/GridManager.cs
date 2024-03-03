@@ -7,16 +7,19 @@ public static class GridManager
 {
     static List<List<GameObject>> grid;
     static List<List<bool>> vis;
-    static List<GameObject> eneymies;
-    static List<GameObject> Bigeneymies;
+    static List<GameObject> enemies;
+    static List<GameObject> bigEnemies;
     public static List<List<GameObject>> Grid { get { return grid; } }
     public static List<List<bool>> Vis { get { return vis; } }
 
-    public static List<GameObject> Enemies {  get { return eneymies; } }
-    public static List<GameObject> BigEnemies { get { return eneymies; } }
+    public static List<GameObject> Enemies {  get { return enemies; } }
+    public static List<GameObject> BigEnemies { get { return bigEnemies; } }
 
     public static void Initialize()
     {
+        enemies = new List<GameObject>();
+        bigEnemies = new List<GameObject>();
+
         grid = new List<List<GameObject>>();
         vis = new List<List<bool>>();
         var G = GameObject.Find("Grid");

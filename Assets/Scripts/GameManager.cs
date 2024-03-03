@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         progressBar = root.Q<ProgressBar>("Corruption");
         none = root.Q<Button>("None");
         cur = none;
-        none.clicked += () => { plantEnum = PlantEnum.None; ButtonPressStyle(none); };
+        none.clicked += () => { ReadyNone(none); };
         albuca = root.Q<Button>("Albuca");
         albuca.clicked += () => { ReadyAlbucaPlant(); ButtonPressStyle(albuca); };
         drosera = root.Q<Button>("Drosera");
@@ -115,6 +115,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ReadyNone(Button none)
+    {
+        plantEnum = PlantEnum.None;
+        ButtonPressStyle(none);
+    }
     public static void ReadyFirePlant()
     {
         plantEnum = PlantEnum.FirePlant;
@@ -151,8 +156,14 @@ public class GameManager : MonoBehaviour
             if (money >= plant.Price && !GridManager.Vis[T.Item1][T.Item2]) 
             {
                 var p = GridManager.Grid[T.Item1][T.Item2].transform;
-                Instantiate(plantsDic[plantEnum], p).transform.parent = p;
+
+                GameObject g = Instantiate(plantsDic[plantEnum], p);
+                g.transform.parent = p;
+                g.GetComponent<BasePlant>().Row = T.Item1;
+                g.GetComponent<BasePlant>().Col = T.Item2;
                 GridManager.Vis[T.Item1][T.Item2] = true;
+                money -= plant.Price;
+                ReadyNone(none);
             }
         }
     }

@@ -24,7 +24,7 @@ public class ElixirPlant : BasePlant
         {
             health -= (damagePreSecond * corruptionCount);
             if (health <= 0)
-                Destroy(gameObject);
+                DestroyPlant();
             moneyTimer++;
 
             if (moneyTimer >= moneyDuration)
@@ -42,13 +42,13 @@ public class ElixirPlant : BasePlant
 
     void DestroyAllEnemies()
     {
-        foreach(GameObject enemy in GridManager.Enemies) 
+        while (GridManager.Enemies.Count > 0) 
         {
-            enemy.GetComponent<Enemy>().DestroyEnemy();
+            GridManager.Enemies[0].GetComponent<Enemy>().DestroyEnemy();
         }
-        foreach (GameObject enemy in GridManager.BigEnemies)
+        while (GridManager.BigEnemies.Count > 0)
         {
-            enemy.GetComponent<Enemy>().DestroyEnemy();
+            GridManager.BigEnemies[0].GetComponent<Enemy>().DestroyEnemy();
         }
 
     }
