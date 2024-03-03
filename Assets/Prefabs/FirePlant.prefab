@@ -103,9 +103,9 @@ MonoBehaviour:
   money: 5
   moneyDuration: 10
   sprites:
-  - {fileID: 21300000, guid: 387cb88531eab7141bf0116c88a30989, type: 3}
-  - {fileID: 21300000, guid: 387cb88531eab7141bf0116c88a30989, type: 3}
-  - {fileID: 21300000, guid: 387cb88531eab7141bf0116c88a30989, type: 3}
+  - {fileID: 21300000, guid: 52f6472141aaf364f80a6ed59bbb848f, type: 3}
+  - {fileID: 21300000, guid: bdd85bdc36be9534ca7cfabd2dd0460b, type: 3}
+  - {fileID: 21300000, guid: 540014ce6d568ee4a81a5d643a65c406, type: 3}
   - {fileID: 21300000, guid: 387cb88531eab7141bf0116c88a30989, type: 3}
   health: 100
   damagePreSecond: 10
