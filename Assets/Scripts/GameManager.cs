@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<Sprite> stages = new List<Sprite>();
     [SerializeField] SpriteRenderer stageRenderer;
 
-    private static int money = 5000;
+    private static int money = 15;
     private static int totalTime = 600;
     private static int elapsedTime = 0;
     private static int corruption = 100;
@@ -116,6 +117,12 @@ public class GameManager : MonoBehaviour
             if (elapsedTime >= totalTime) 
             {
                 Debug.Log("Game Over");
+                SceneManager.LoadScene("LoseScene");
+            }
+            else if (corruption <= 0)
+            {
+                Debug.Log("You Win");
+                SceneManager.LoadScene("WinScene");
             }
 
 
