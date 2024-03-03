@@ -15,12 +15,25 @@ public class GoldenPlant : BasePlant
 
             if (moneyTimer >= moneyDuration)
             {
-                Debug.Log(money + "  " + corruptionDecrease);
-                // Destory All Enemys and all Corruotion;
+                DestroyAllEnemies();
+                GameManager.Corruption -= corruptionDecrease;
                 moneyTimer = 0;
             }
 
             yield return new WaitForSeconds(1);
         }
+    }
+
+    void DestroyAllEnemies()
+    {
+        foreach (GameObject enemy in GridManager.Enemies)
+        {
+            enemy.GetComponent<Enemy>().DestroyEnemy();
+        }
+        foreach (GameObject enemy in GridManager.BigEnemies)
+        {
+            enemy.GetComponent<Enemy>().DestroyEnemy();
+        }
+
     }
 }

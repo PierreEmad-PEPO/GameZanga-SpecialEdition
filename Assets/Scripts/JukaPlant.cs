@@ -15,11 +15,34 @@ public class JukaPlant : BasePlant
 
             if (moneyTimer >= moneyDuration)
             {
-                // destroy an animy
+                DestroyClossstEnemy();
                 moneyTimer = 0;
             }
 
             yield return new WaitForSeconds(1);
         }
     }
+
+    void DestroyClossstEnemy() 
+    {
+        float minDis = 10000;
+        GameObject closeEnemy = null;
+
+        foreach (GameObject enemy in GridManager.BigEnemies)
+        {
+            float dis = Vector3.Distance(transform.position, enemy.transform.position);
+            if (dis < minDis) 
+            {
+                dis = minDis;
+                closeEnemy = enemy;
+            }
+        }
+
+        if (closeEnemy != null) 
+        {
+           closeEnemy.GetComponent<Enemy>().DestroyEnemy();
+        }
+
+    }
+
 }

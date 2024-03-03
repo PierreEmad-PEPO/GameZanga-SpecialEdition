@@ -29,8 +29,8 @@ public class AlbucaPlant : BasePlant
 
             if (moneyTimer >= moneyDuration)
             {
-                Debug.Log(money + "  " + corruptionDecrease);
-
+                GameManager.Money += money;
+                GameManager.Corruption -= corruptionDecrease;
                 moneyTimer = 0;
             }
 

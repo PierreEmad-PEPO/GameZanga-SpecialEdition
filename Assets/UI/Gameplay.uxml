@@ -1,0 +1,27 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Gameplay.uss?fileID=7433441132597879392&amp;guid=c6f0d2242b61f8943a7ee654c7af4685&amp;type=3#Gameplay" />
+    <ui:VisualElement name="Header" style="flex-grow: 0; flex-shrink: 0; height: 10%; width: 80%; flex-direction: row; align-self: center;">
+        <ui:VisualElement name="MoneyContainer" style="flex-grow: 0; flex-shrink: 0; width: 20%; flex-direction: row; background-color: rgba(248, 187, 118, 0.51); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; margin-left: 5%;">
+            <ui:VisualElement name="MoneyIcon" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 35%; background-image: url(&apos;project://database/Assets/Sprites/goldenDust.png?fileID=21300000&amp;guid=6a79e73a36353204d941fe37e4d9485c&amp;type=3#goldenDust&apos;);" />
+            <ui:Label tabindex="-1" text="100" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MoneyLabel" style="-unity-text-align: middle-center; flex-grow: 1; flex-shrink: 1; font-size: 38px; color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Timer" style="flex-grow: 1; align-items: center; justify-content: center; align-self: center; height: 100%;">
+            <ui:VisualElement name="TimerImg" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/Sprites/timer.png?fileID=21300000&amp;guid=265ece34e6364474ba7ba05cf21f21ed&amp;type=3#timer&apos;); flex-shrink: 0; height: 150%; width: 50%; position: absolute; right: 37.5%; align-items: center; justify-content: center; align-self: center; top: 25%;">
+                <ui:Label tabindex="-1" text="10:00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TimerLabel" style="font-size: 35px; color: rgb(255, 255, 255);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement style="flex-grow: 1;" />
+    <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; width: 75%; height: 10%; align-self: center;">
+        <ui:ProgressBar value="119" name="Corruption" low-value="20" high-value="120" style="border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); width: 75%; align-self: center;" />
+    </ui:VisualElement>
+    <ui:GroupBox style="position: absolute; width: 10%; align-items: center; justify-content: center; align-self: auto; height: 100%;">
+        <ui:Button text="None" parse-escape-sequences="true" display-tooltip-when-elided="true" name="None" class="button button-pressed" style="background-color: rgb(255, 255, 255); background-image: none;" />
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Albuca" class="button" />
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Drosera" class="button" style="background-image: url(&apos;project://database/Assets/Sprites/Drosera_plant.png?fileID=21300000&amp;guid=e90ef6f61c9dc1e47ba77cf01360f0be&amp;type=3#Drosera_plant&apos;);" />
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Elixir" class="button" style="background-image: url(&apos;project://database/Assets/Sprites/Elixir_plant.png?fileID=21300000&amp;guid=5b0bac023fb65d549aefadfaf3ade484&amp;type=3#Elixir_plant&apos;);" />
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Fire" class="button" style="background-image: url(&apos;project://database/Assets/Sprites/Fire_plant.png?fileID=21300000&amp;guid=387cb88531eab7141bf0116c88a30989&amp;type=3#Fire_plant&apos;);" />
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Golden" class="button" style="background-image: url(&apos;project://database/Assets/Sprites/The_golden_plant_02.png?fileID=21300000&amp;guid=16a52b3fed2ce8548bc55278ed9abdd3&amp;type=3#The_golden_plant_02&apos;);" />
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Juka" class="button" style="background-image: url(&apos;project://database/Assets/Sprites/Juke_plant.png?fileID=21300000&amp;guid=9b880d4ce53e7234dbb375185c97c430&amp;type=3#Juke_plant&apos;);" />
+    </ui:GroupBox>
+</ui:UXML>

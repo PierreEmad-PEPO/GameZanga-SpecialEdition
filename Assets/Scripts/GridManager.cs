@@ -7,9 +7,14 @@ public static class GridManager
 {
     static List<List<GameObject>> grid;
     static List<List<bool>> vis;
+    static List<GameObject> eneymies;
+    static List<GameObject> Bigeneymies;
     public static List<List<GameObject>> Grid { get { return grid; } }
     public static List<List<bool>> Vis { get { return vis; } }
-    
+
+    public static List<GameObject> Enemies {  get { return eneymies; } }
+    public static List<GameObject> BigEnemies { get { return eneymies; } }
+
     public static void Initialize()
     {
         grid = new List<List<GameObject>>();

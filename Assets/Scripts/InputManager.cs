@@ -34,8 +34,8 @@ public static class InputManager
     {
         Vector3 world = GetMousePos();
         CeilPoint(ref world.x, ref world.y);
-        int r = (int)Math.Abs(world.y - startPoint.y);
-        int c = (int)Math.Abs(world.x - startPoint.x);
+        int r = (int)(world.y - startPoint.y);
+        int c = (int)(world.x - startPoint.x);
 
         Tuple<int, int> ret = new Tuple<int, int>(r,c);
         Debug.Log(ret);
