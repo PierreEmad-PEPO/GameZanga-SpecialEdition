@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 50
-  growDuration: 3
+  growDuration: 20
   corruptionDecrease: 60
   money: 20
-  moneyDuration: 10
+  moneyDuration: 40
   sprites:
   - {fileID: 21300000, guid: 5b0bac023fb65d549aefadfaf3ade484, type: 3}
   - {fileID: 21300000, guid: 5b0bac023fb65d549aefadfaf3ade484, type: 3}

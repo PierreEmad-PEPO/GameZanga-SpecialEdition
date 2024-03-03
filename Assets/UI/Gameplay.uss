@@ -13,7 +13,7 @@
 .unity-progress-bar__progress {
     height: 55%;
     top: 12.5%;
-    background-color: rgb(178, 179, 45);
+    background-color: rgb(215, 217, 0);
     position: absolute;
     left: 20%;
     border-top-right-radius: 20px;

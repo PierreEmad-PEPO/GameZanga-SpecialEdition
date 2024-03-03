@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
 
+    [SerializeField] List<Sprite> stages = new List<Sprite>();
+    [SerializeField] SpriteRenderer stageRenderer;
+
     private static int money = 5000;
     private static int totalTime = 600;
     private static int elapsedTime = 0;
@@ -105,10 +108,16 @@ public class GameManager : MonoBehaviour
             float low = progressBar.lowValue;
             progressBar.value = corruption + low;
 
+            int idx = (int)(corruption * 5f / 99f);
+            if (idx > 4) idx = 4;
+            stageRenderer.sprite = stages[idx];
+
             if (elapsedTime >= totalTime) 
             {
                 Debug.Log("Game Over");
             }
+
+
 
             yield return new WaitForSeconds(1);
             elapsedTime++;
