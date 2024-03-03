@@ -43,6 +43,7 @@ public class EnemySpawner : MonoBehaviour
             else
                 SpawnBigEnemiesWave();
             durationSpecial = Random.Range(30,120);
+            elapsedTimeSpecial = 0;
         }
         elapsedTimeSpecial += Time.deltaTime;
     }
