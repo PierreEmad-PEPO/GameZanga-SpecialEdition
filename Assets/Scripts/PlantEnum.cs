@@ -4,6 +4,10 @@ using UnityEngine;
 
 public enum PlantEnum
 {
-    ennb,
-    gazr
+    FirePlant,
+    AlbucaPlant,
+    DroseraPlant,
+    ElixirPlant,
+    TheGoldenPlant,
+    None,
 }

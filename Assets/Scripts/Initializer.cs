@@ -7,8 +7,6 @@ using UnityEngine;
 
 public class Initializer : MonoBehaviour
 {
-    Vector2 startPoint;
-
     void Awake()
     {
         GridManager.Initialize();

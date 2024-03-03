@@ -26,7 +26,7 @@ public static class GridManager
                 row.Add(ch.gameObject);
                 boolRow.Add(false);
             }
-            vis.Add(boolRow) ;
+            vis.Add(boolRow);
             grid.Add(row);
         }
     }
