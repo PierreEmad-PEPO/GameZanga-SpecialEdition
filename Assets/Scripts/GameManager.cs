@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour
 
             int idx = (int)(corruption * 5f / 99f);
             if (idx > 4) idx = 4;
+            if (idx < 0) idx = 0;
             stageRenderer.sprite = stages[idx];
 
             if (elapsedTime >= totalTime) 
