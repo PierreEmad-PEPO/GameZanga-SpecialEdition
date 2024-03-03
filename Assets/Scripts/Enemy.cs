@@ -18,8 +18,12 @@ public class Enemy : MonoBehaviour
     bool willDestroy = false;
     bool once = true;
 
+    float screenWidth;
+    float screenHeight;
+
     private void Start()
     {
+        Initialize();
         startPos = GenratPointOutsideScreen();
         transform.position = startPos;
 
@@ -133,5 +137,22 @@ public class Enemy : MonoBehaviour
             targetPlant.CorruptionCount--;
         }
         Destroy(gameObject);
+    }
+
+    public void Initialize()
+    {
+        rangeX = Screen.width;
+        rangeY = Screen.height;
+
+        float screenZ = -Camera.main.transform.position.z;
+        Vector3 lowerLeftCornerScreen = new Vector3(0, 0, screenZ);
+        Vector3 upperRightCornerScreen = new Vector3(
+            rangeX, rangeY, screenZ);
+        Vector3 upperRightCornerWorld =
+            Camera.main.ScreenToWorldPoint(upperRightCornerScreen);
+
+        rangeX = (int)(upperRightCornerScreen.x );
+        rangeY = (int)(upperRightCornerScreen.y );
+
     }
 }
