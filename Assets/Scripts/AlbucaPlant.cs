@@ -27,6 +27,8 @@ public class AlbucaPlant : BasePlant
                 DestroyPlant();
             moneyTimer++;
 
+            Debug.Log(health);
+
             if (moneyTimer >= moneyDuration)
             {
                 GameManager.Money += money;

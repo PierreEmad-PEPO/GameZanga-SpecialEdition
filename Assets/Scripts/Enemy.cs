@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
     protected bool willDestroy = false;
     protected bool once = true;
 
+    protected bool reached = false;
+
 
 
     protected void Start()
@@ -33,7 +35,7 @@ public class Enemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, endPos, Time.deltaTime * speed); ;
         //elapsedDistance += speed * Time.deltaTime;
 
-        if (Vector2.Distance(transform.position,endPos) <= .05f)
+        if (Vector2.Distance(transform.position,endPos) <= .1f)
         {
             if(willDestroy)
             {
@@ -41,6 +43,7 @@ public class Enemy : MonoBehaviour
             }
             else if (targetGameObject != null && once) 
             {
+                reached = true;
                 targetPlant.CorruptionCount ++;
                 once = false;
             }
@@ -90,6 +93,7 @@ public class Enemy : MonoBehaviour
 
     protected Vector3 GetRandomPlantPos ()
     {
+        reached = false;
         Vector3 pos = GenratPointOutsideScreen();
         List<GameObject> plants = new List<GameObject>();
         foreach(var list in GridManager.Grid)
@@ -128,7 +132,7 @@ public class Enemy : MonoBehaviour
 
     public virtual void DestroyEnemy()
     {
-        if (targetPlant != null) 
+        if (targetPlant != null && reached) 
         {
             targetPlant.CorruptionCount--;
         }

@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         duration = Random.Range(10,10);
-        durationSpecial = Random.Range(30, 120);
+        durationSpecial = Random.Range(20, 120);
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
         {
             
             SpawnWave();
-            duration = Random.Range(10, 10);
+            duration = Random.Range(5, 30);
             elapsedTime = 0;
         }
         elapsedTime += Time.deltaTime;
@@ -42,7 +42,7 @@ public class EnemySpawner : MonoBehaviour
                 CorruptionThePlant();
             else
                 SpawnBigEnemiesWave();
-            durationSpecial = Random.Range(30,120);
+            durationSpecial = Random.Range(20,120);
             elapsedTimeSpecial = 0;
         }
         elapsedTimeSpecial += Time.deltaTime;
