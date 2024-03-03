@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 50
   growDuration: 20
-  corruptionDecrease: 60
+  corruptionDecrease: 20
   money: 20
   moneyDuration: 40
   sprites:
