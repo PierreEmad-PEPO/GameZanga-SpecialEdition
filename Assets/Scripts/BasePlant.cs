@@ -20,8 +20,10 @@ public abstract class BasePlant : MonoBehaviour
     protected int health = 100;
     [SerializeField]
     protected int damagePreSecond = 10;
-
-    protected string description = "";
+    [SerializeField, TextArea]
+    protected string name;
+    [SerializeField, TextArea]
+    protected string description;
 
     protected int moneyTimer = 0;
 
@@ -34,6 +36,7 @@ public abstract class BasePlant : MonoBehaviour
     protected int col;
 
     public int Price { get { return price; } }
+    public string Name { get { return name; } }
     public bool IsCorruption { get { return isCorruption; } set { isCorruption = value; } }
 
     public int CorruptionCount { get { return corruptionCount; } set {  corruptionCount = value; } }
