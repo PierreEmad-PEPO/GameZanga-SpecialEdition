@@ -3,11 +3,11 @@
     <ui:VisualElement name="Header" style="flex-grow: 0; flex-shrink: 0; height: 10%; width: 80%; flex-direction: row; align-self: center;">
         <ui:VisualElement name="MoneyContainer" style="flex-grow: 0; flex-shrink: 0; width: 20%; flex-direction: row; background-color: rgba(248, 187, 118, 0.51); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; margin-left: 5%;">
             <ui:VisualElement name="MoneyIcon" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 35%; background-image: url(&apos;project://database/Assets/Sprites/goldenDust.png?fileID=21300000&amp;guid=6a79e73a36353204d941fe37e4d9485c&amp;type=3#goldenDust&apos;);" />
-            <ui:Label tabindex="-1" text="100" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MoneyLabel" style="-unity-text-align: middle-center; flex-grow: 1; flex-shrink: 1; font-size: 38px; color: rgb(255, 255, 255);" />
+            <ui:Label tabindex="-1" text="100" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MoneyLabel" style="-unity-text-align: middle-center; flex-grow: 1; flex-shrink: 1; font-size: 38px; color: rgb(255, 255, 255); -unity-font-style: bold;" />
         </ui:VisualElement>
         <ui:VisualElement name="Timer" style="flex-grow: 1; align-items: center; justify-content: center; align-self: center; height: 100%;">
             <ui:VisualElement name="TimerImg" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/Sprites/timer.png?fileID=21300000&amp;guid=265ece34e6364474ba7ba05cf21f21ed&amp;type=3#timer&apos;); flex-shrink: 0; height: 150%; width: 50%; position: absolute; right: 37.5%; align-items: center; justify-content: center; align-self: center; top: 25%;">
-                <ui:Label tabindex="-1" text="10:00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TimerLabel" style="font-size: 35px; color: rgb(255, 255, 255);" />
+                <ui:Label tabindex="-1" text="10:00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TimerLabel" style="font-size: 35px; color: rgb(255, 255, 255); -unity-font-style: bold;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
