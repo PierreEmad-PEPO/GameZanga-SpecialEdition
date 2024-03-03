@@ -6,19 +6,19 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Vector2 startPos;
-    Vector2 endPos;
-    float elapsedDistance = 0;
-    BasePlant targetPlant = null;
-    GameObject targetGameObject = null;
-    float speed = 2f;
+    protected Vector2 startPos;
+    protected Vector2 endPos;
+    protected float elapsedDistance = 0;
+    protected BasePlant targetPlant = null;
+    protected GameObject targetGameObject = null;
+    protected float speed = 2f;
 
-    bool willDestroy = false;
-    bool once = true;
+    protected bool willDestroy = false;
+    protected bool once = true;
 
 
 
-    private void Start()
+    protected void Start()
     {
         startPos = GenratPointOutsideScreen();
         transform.position = startPos;
@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private void Update()
+    protected void Update()
     {
         Vector2 pos = Vector2.Lerp(startPos, endPos, elapsedDistance);
         transform.position = Vector2.MoveTowards(transform.position, endPos, Time.deltaTime * speed); ;
@@ -54,12 +54,12 @@ public class Enemy : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
+    protected virtual void OnMouseDown()
     {
         DestroyEnemy();
     }
 
-    Vector3 GenratPointOutsideScreen()
+    protected Vector3 GenratPointOutsideScreen()
     {
         Vector3 pos = Vector3.zero;
         pos.z = transform.position.z;
@@ -88,7 +88,7 @@ public class Enemy : MonoBehaviour
         return pos;
     }
 
-    Vector3 GetRandomPlantPos ()
+    protected Vector3 GetRandomPlantPos ()
     {
         Vector3 pos = GenratPointOutsideScreen();
         List<GameObject> plants = new List<GameObject>();
@@ -126,12 +126,13 @@ public class Enemy : MonoBehaviour
         return pos;
     }
 
-    private void DestroyEnemy()
+    public virtual void DestroyEnemy()
     {
         if (targetPlant != null) 
         {
             targetPlant.CorruptionCount--;
         }
+        GridManager.Enemies.Remove(gameObject);
         Destroy(gameObject);
     }
 }

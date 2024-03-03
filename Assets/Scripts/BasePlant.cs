@@ -16,11 +16,13 @@ public abstract class BasePlant : MonoBehaviour
     protected int moneyDuration;
     [SerializeField]
     protected List<Sprite> sprites;
+    [SerializeField]
+    protected int health = 100;
+    [SerializeField]
+    protected int damagePreSecond = 10;
 
     protected int moneyTimer = 0;
 
-    protected int health = 100;
-    protected int damagePreSecond = 10;
     protected int corruptionCount = 0;
 
     protected bool isCorruption = false;
