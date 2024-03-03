@@ -26,6 +26,7 @@ public abstract class BasePlant : MonoBehaviour
     protected SpriteRenderer spriteRn;
 
     public int Price { get { return price; } }
+    public bool IsCorruption { get { return isCorruption; } }
 
     protected virtual void Start()
     {
