@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1696733649906051010}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: f68a8d3aa10317b4295be05bfa54a88b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e90ef6f61c9dc1e47ba77cf01360f0be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,8 +103,8 @@ MonoBehaviour:
   money: 10
   moneyDuration: 15
   sprites:
-  - {fileID: 21300000, guid: f68a8d3aa10317b4295be05bfa54a88b, type: 3}
-  - {fileID: 21300000, guid: 5fec3babef889cc46b083bd4e4ab3aa1, type: 3}
-  - {fileID: 21300000, guid: 720271c358f016d4d8e10a72c9ddedec, type: 3}
-  - {fileID: 21300000, guid: 2e81e7d335483804d8daadf98069d131, type: 3}
+  - {fileID: 21300000, guid: e90ef6f61c9dc1e47ba77cf01360f0be, type: 3}
+  - {fileID: 21300000, guid: e90ef6f61c9dc1e47ba77cf01360f0be, type: 3}
+  - {fileID: 21300000, guid: e90ef6f61c9dc1e47ba77cf01360f0be, type: 3}
+  - {fileID: 21300000, guid: e90ef6f61c9dc1e47ba77cf01360f0be, type: 3}
   totalCollection: 2

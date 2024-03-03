@@ -9,5 +9,6 @@ public enum PlantEnum
     DroseraPlant,
     ElixirPlant,
     TheGoldenPlant,
+    JukaPlant,
     None,
 }

@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Container" style="flex-grow: 0; position: absolute; flex-shrink: 0; bottom: 0; width: 100%; height: 25%; flex-direction: row;">
+        <ui:VisualElement name="Message" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/Sprites/txt_cloud.png?fileID=21300000&amp;guid=356a3aa4522eb1e4689ca1137d51a649&amp;type=3#txt_cloud&apos;); position: absolute; flex-shrink: 0; height: 100%; width: 90%; right: 0; bottom: 26%;" />
+        <ui:VisualElement name="Avatar" style="flex-grow: 0; flex-shrink: 0; width: 12.5%; height: 100%; background-image: url(&apos;project://database/Assets/Sprites/onion_narrator.png?fileID=21300000&amp;guid=7f55c46c3731edf40b6baf4a873e3bfc&amp;type=3#onion_narrator&apos;); position: absolute; right: 5%;" />
+    </ui:VisualElement>
+</ui:UXML>
