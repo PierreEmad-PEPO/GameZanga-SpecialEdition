@@ -116,13 +116,22 @@ public class GameManager : MonoBehaviour
 
             if (elapsedTime >= totalTime) 
             {
+                money = 15;
+                totalTime = 600;
+                elapsedTime = 0;
+                corruption = 100;
                 Debug.Log("Game Over");
                 SceneManager.LoadScene("LoseScene");
             }
             else if (corruption <= 0)
             {
+                money = 15;
+                totalTime = 600;
+                elapsedTime = 0;
+                corruption = 100;
                 Debug.Log("You Win");
                 SceneManager.LoadScene("WinScene");
+
             }
 
 
