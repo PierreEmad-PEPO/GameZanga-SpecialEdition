@@ -16,7 +16,7 @@
         <ui:ProgressBar value="119" name="Corruption" low-value="20" high-value="120" style="border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); width: 75%; align-self: center;" />
     </ui:VisualElement>
     <ui:GroupBox style="position: absolute; width: 10%; align-items: center; justify-content: center; align-self: auto; height: 100%;">
-        <ui:Button text="None" parse-escape-sequences="true" display-tooltip-when-elided="true" name="None" class="button button-pressed" style="background-color: rgb(255, 255, 255); background-image: none;" />
+        <ui:Button text="None" parse-escape-sequences="true" display-tooltip-when-elided="true" name="None" class="button button-pressed" style="background-color: rgba(255, 255, 255, 0.53); background-image: none;" />
         <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Albuca" class="button" />
         <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Drosera" class="button" style="background-image: url(&apos;project://database/Assets/Sprites/Drosera_plant.png?fileID=21300000&amp;guid=e90ef6f61c9dc1e47ba77cf01360f0be&amp;type=3#Drosera_plant&apos;);" />
         <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Elixir" class="button" style="background-image: url(&apos;project://database/Assets/Sprites/Elixir_plant.png?fileID=21300000&amp;guid=5b0bac023fb65d549aefadfaf3ade484&amp;type=3#Elixir_plant&apos;);" />
