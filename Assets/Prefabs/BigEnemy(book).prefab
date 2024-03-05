@@ -10,11 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4478108463432597186}
   - component: {fileID: 2982860662635088423}
-  - component: {fileID: 1699730217106025598}
-  - component: {fileID: 5192712279402764366}
-  - component: {fileID: 221606443246940128}
+  - component: {fileID: -6021337657887103680}
   m_Layer: 0
-  m_Name: BigEnemy
+  m_Name: BigEnemy(book)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1699730217106025598
+--- !u!114 &-6021337657887103680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,78 +94,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 3863812283112085252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a256733411189f74c9cb1715e5747087, type: 3}
+  m_Script: {fileID: 11500000, guid: 95d197144164fb84c9a751a976a8ac5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &5192712279402764366
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3863812283112085252}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &221606443246940128
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3863812283112085252}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 4
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.007445842, y: -0.0024819076}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3, y: 1.132}
-    newSize: {x: 0.42, y: 0.42}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8582217, y: 0.6108007}
-  m_EdgeRadius: 0
+  price: 0
+  growDuration: 0
+  corruptionDecrease: 0
+  money: 0
+  moneyDuration: 0
+  sprites: []
+  health: 100
+  damagePreSecond: 10
+  name: "\u0627\u0644\u062D\u0634\u0631\u0629 \u0627\u0644\u0639\u0645\u0644\u0627\u0642\u0629"
+  description: "\u0627\u0644\u062D\u0634\u0631\u0629 \u0627\u0644\u0639\u0645\u0644\u0627\u0642\u0629
+    \u062A\u0638\u0647\u0631 \u0628\u0639\u062F \u0648\u0642\u062A \u0639\u0634\u0648\u0627\u0626\u064A
+    \u0645\u0646 40 \u0644 160 \u062B\u0627\u0646\u064A\u0629\r\n\u0639\u062F\u062F\u0647\u0645
+    \u064A\u0643\u0648\u0646 \u0639\u0634\u0648\u0627\u0626\u064A \u0645\u0646 1
+    \u0644 5\r\n\u0644\u0627 \u064A\u0645\u0643\u0646 \u0642\u062A\u0644\u0647\u0645
+    \u0627\u0644\u0627 \u0628\u0646\u0628\u0627\u062A \u0627\u0644\u062C\u0648\u0643\u0627
+    \u0648\u0627\u0644\u0627\u0643\u0633\u064A\u0631"

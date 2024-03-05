@@ -86,6 +86,7 @@ public abstract class BasePlant : MonoBehaviour
         if (other.CompareTag("Enemy") && other.GetComponent<Enemy>().TargetPlant == gameObject)
         {
             corruptionCount--;
+            if (corruptionCount < 0) corruptionCount = 0;
             Debug.Log("55555555555");
         }
     }

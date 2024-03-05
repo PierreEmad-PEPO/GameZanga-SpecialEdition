@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
             isReached = true;
 
         if (willDestroy && isReached)
-            Destroy(targetPlant);
+            DestroyEnemy();
 
         if ( isReached && (targetPlant == null || targetPlant.IsDestroyed()))
         {

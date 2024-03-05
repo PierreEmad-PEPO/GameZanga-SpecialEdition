@@ -8,11 +8,12 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
 
-    [SerializeField] List<Sprite> stages = new List<Sprite>();
     [SerializeField] SpriteRenderer stageRenderer;
+    [SerializeField] Color startColor;
+    [SerializeField] Color endColor;
 
-    private static int money = 15;
-    private static int totalTime = 600;
+    private static int money = 30;
+    private static int totalTime = 900;
     private static int elapsedTime = 0;
     private static int corruption = 100;
     public static bool hasRedSeed;
@@ -109,12 +110,22 @@ public class GameManager : MonoBehaviour
             float low = progressBar.lowValue;
             progressBar.value = corruption + low;
 
-            int idx = (int)(corruption * 5f / 99f);
-            if (idx > 4) idx = 4;
-            if (idx < 0) idx = 0;
-            stageRenderer.sprite = stages[idx];
+            stageRenderer.color = Color.Lerp(startColor, endColor, corruption / 100f);
 
-            if (elapsedTime >= totalTime) 
+
+            List<GameObject> plants = new List<GameObject>();
+            foreach (var list in GridManager.Grid)
+            {
+                foreach (var plant in list)
+                {
+                    int chikdNumber = plant.transform.childCount;
+                    if (chikdNumber > 0)
+                    {
+                        plants.Add(plant.gameObject.transform.GetChild(0).transform.gameObject);
+                    }
+                }
+            }
+            if (elapsedTime >= totalTime || (plants.Count == 0 && money < 5)) 
             {
                 money = 15;
                 totalTime = 600;

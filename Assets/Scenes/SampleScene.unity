@@ -517,7 +517,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3b9de998fbdf84649ad531a2baf42f82, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a83171a2df43a9c4fae622840d7e2165, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1156,6 +1156,8 @@ MonoBehaviour:
   - {fileID: 7639876478728471020, guid: 5adf1a98bc2aa8143a551a9c7939fa4b, type: 3}
   - {fileID: 4818844088282028789, guid: 061fc776ae66f4345b2bcf29853f4885, type: 3}
   - {fileID: 6390978515418835063, guid: 10cab15ddef7cd644a78b3144f31ee8e, type: 3}
+  - {fileID: 3297635487878247031, guid: d92e636ffe3c28d4c8240341b18c9f9f, type: 3}
+  - {fileID: 3863812283112085252, guid: 3a20b54a552e2954b9554c07dc34cc96, type: 3}
 --- !u!114 &670631224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2179,13 +2181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e2b6700131b18246a6c8e4a9facf208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stages:
-  - {fileID: 21300000, guid: a83171a2df43a9c4fae622840d7e2165, type: 3}
-  - {fileID: 21300000, guid: b604dc2bd5b57d544a5abd8094593e68, type: 3}
-  - {fileID: 21300000, guid: 58309299793b3cc4ca7b4ce726900003, type: 3}
-  - {fileID: 21300000, guid: 0277a15a9fd8a2a4fa635d4671f075df, type: 3}
-  - {fileID: 21300000, guid: 3b9de998fbdf84649ad531a2baf42f82, type: 3}
   stageRenderer: {fileID: 431816093}
+  startColor: {r: 0.6089251, g: 0.9433962, b: 0.5909576, a: 1}
+  endColor: {r: 0.5283019, g: 0.4009792, b: 0, a: 1}
   firePlant: {fileID: 4818844088282028789, guid: 061fc776ae66f4345b2bcf29853f4885, type: 3}
   albucaPlant: {fileID: 5202783022492306279, guid: 7ae052e5e688ba4499cd8290a274efe1, type: 3}
   droseraPlant: {fileID: 1696733649906051010, guid: 4020e072677e82945b02f8f408ac9fb8, type: 3}

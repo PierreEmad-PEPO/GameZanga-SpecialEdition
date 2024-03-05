@@ -15,8 +15,8 @@ public class EnemySpawner : MonoBehaviour
 
     float elapsedTimeSpecial;
     float durationSpecial = 3;
-    float maxDurationSpecial = 20;
-    float minDurationSpecial = 60;
+    float maxDurationSpecial = 40;
+    float minDurationSpecial = 160;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +54,7 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnWave()
     {
-        int number = Random.Range(1, 4);
+        int number = Random.Range(1, 10);
         for (int i = 0; i < number; i++)
         {
             GameObject en = Instantiate(enemyPrefab);
@@ -87,7 +87,7 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnBigEnemiesWave()
     {
-        int randomCount = Random.Range(1, 4);
+        int randomCount = Random.Range(1, 6);
         for (int i = 0; i < randomCount; i++)
         {
             GameObject en = Instantiate(enemyBigPrefab);
