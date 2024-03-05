@@ -29,7 +29,6 @@ public class ElixirPlant : BasePlant
 
             if (moneyTimer >= moneyDuration)
             {
-                Debug.Log(money + "  " + corruptionDecrease);
                 GameManager.Money += money;
                 GameManager.Corruption -= corruptionDecrease;
                 DestroyAllEnemies();

@@ -3,58 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
     protected Vector2 startPos;
     protected Vector2 endPos;
-    protected float elapsedDistance = 0;
-    protected BasePlant targetPlant = null;
-    protected GameObject targetGameObject = null;
+    protected GameObject targetPlant = null;
     protected float speed = 2f;
 
-    protected bool willDestroy = false;
-    protected bool once = true;
+    bool willDestroy = false;
+    bool isReached = false;
 
-    protected bool reached = false;
-
-
+    public GameObject TargetPlant { get { return targetPlant; } }
 
     protected void Start()
     {
         startPos = GenratPointOutsideScreen();
         transform.position = startPos;
-
         endPos = GetRandomPlantPos();
 
     }
 
     protected void Update()
     {
-        Vector2 pos = Vector2.Lerp(startPos, endPos, elapsedDistance);
-        transform.position = Vector2.MoveTowards(transform.position, endPos, Time.deltaTime * speed); ;
-        //elapsedDistance += speed * Time.deltaTime;
+        transform.position = Vector2.MoveTowards(transform.position, endPos, Time.deltaTime * speed);
+        if (Vector2.Distance(transform.position, endPos) <= .05f)
+            isReached = true;
 
-        if (Vector2.Distance(transform.position,endPos) <= .1f)
+        if (willDestroy && isReached)
+            Destroy(targetPlant);
+
+        if ( isReached && (targetPlant == null || targetPlant.IsDestroyed()))
         {
-            if(willDestroy)
-            {
-                DestroyEnemy();
-            }
-            else if (targetGameObject != null && once) 
-            {
-                reached = true;
-                targetPlant.CorruptionCount ++;
-                once = false;
-            }
-            else if (targetGameObject.IsDestroyed())
-            {
-                startPos = transform.position;
-                endPos = GetRandomPlantPos();
-                elapsedDistance = 0;
-            }
+            endPos = GetRandomPlantPos();
         }
-        
+
     }
 
     protected virtual void OnMouseDown()
@@ -93,7 +77,9 @@ public class Enemy : MonoBehaviour
 
     protected Vector3 GetRandomPlantPos ()
     {
-        reached = false;
+        isReached = false;
+        Vector3 dir;
+        float angle;
         Vector3 pos = GenratPointOutsideScreen();
         List<GameObject> plants = new List<GameObject>();
         foreach(var list in GridManager.Grid)
@@ -110,32 +96,30 @@ public class Enemy : MonoBehaviour
         if (plants.Count > 0)
         {
             int rnadomIndex = Random.Range(0, plants.Count);
-            plants[rnadomIndex].gameObject.TryGetComponent<BasePlant>(out targetPlant);
-            targetGameObject = plants[rnadomIndex];
-            if (targetPlant == null)
+            if (plants[rnadomIndex].CompareTag("Plant"))
             {
-                willDestroy = true;
+                targetPlant = plants[rnadomIndex];
+                pos = plants[rnadomIndex].transform.position;
+                dir = pos - transform.position;
+                angle = Vector3.Angle(dir,Vector2.right);
+                if (dir.y < 0)
+                    angle = 360 - angle;
+                transform.rotation = Quaternion.Euler (0, 0, angle);
+
                 return pos;
             }
-            pos = plants[rnadomIndex].transform.position;
-            once = true;
         }
-        else
-            willDestroy = true;
-        transform.LookAt(pos);
-        Quaternion rotat = transform.rotation;
-        rotat.x = 0;
-        rotat.y = 0;
-        transform.rotation = rotat;
+        willDestroy = true;
+        dir = pos - transform.position;
+        angle = Vector3.Angle(dir, Vector2.right);
+        if (dir.y < 0)
+            angle = 360 - angle;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
         return pos;
     }
 
     public virtual void DestroyEnemy()
     {
-        if (targetPlant != null && reached) 
-        {
-            targetPlant.CorruptionCount--;
-        }
         GridManager.Enemies.Remove(gameObject);
         Destroy(gameObject);
     }

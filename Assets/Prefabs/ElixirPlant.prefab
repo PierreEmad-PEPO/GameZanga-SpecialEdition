@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5387516569548515708}
   - component: {fileID: 6644545344978769942}
   - component: {fileID: 2138507236342249536}
+  - component: {fileID: 1155810409959180364}
   m_Layer: 0
   m_Name: ElixirPlant
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,3 +121,48 @@ MonoBehaviour:
     \u0632\u0631\u0627\u0639\u0629 \u0648\u0627\u062D\u062F\u0629 \u0645\u0646\u0647\u0627
     \u062A\u0643\u0633\u0628\u0643 \u0627\u0644\u0628\u0630\u0631\u0629 \u0627\u0644\u0632\u0631\u0642\u0627\u0621\r\n"
   totalCollection: 1
+--- !u!61 &1155810409959180364
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6968535700035508672}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.98067635, y: 1.0193237}
+    newSize: {x: 0.42, y: 0.42}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.98067635, y: 1.0193237}
+  m_EdgeRadius: 0

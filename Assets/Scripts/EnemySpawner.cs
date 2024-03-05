@@ -10,15 +10,19 @@ public class EnemySpawner : MonoBehaviour
     GameObject enemyBigPrefab;
     float elapsedTime = 0;
     float duration = 3;
+    float maxDuration = 15;
+    float minDuration = 30;
 
     float elapsedTimeSpecial;
     float durationSpecial = 3;
+    float maxDurationSpecial = 20;
+    float minDurationSpecial = 60;
 
     // Start is called before the first frame update
     void Start()
     {
-        duration = Random.Range(10,10);
-        durationSpecial = Random.Range(20, 120);
+        duration = Random.Range(minDuration,maxDuration);
+        durationSpecial = Random.Range(minDurationSpecial, maxDurationSpecial);
     }
 
     // Update is called once per frame
@@ -28,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
         {
             
             SpawnWave();
-            duration = Random.Range(5, 30);
+            duration = Random.Range(minDuration, maxDuration);
             elapsedTime = 0;
         }
         elapsedTime += Time.deltaTime;
@@ -42,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
                 CorruptionThePlant();
             else
                 SpawnBigEnemiesWave();
-            durationSpecial = Random.Range(20,120);
+            durationSpecial = Random.Range(minDurationSpecial, maxDurationSpecial);
             elapsedTimeSpecial = 0;
         }
         elapsedTimeSpecial += Time.deltaTime;

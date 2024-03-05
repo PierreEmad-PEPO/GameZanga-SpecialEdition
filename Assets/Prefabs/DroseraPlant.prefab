@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8126821892728389053}
   - component: {fileID: 5987814406413411564}
-  - component: {fileID: 7020522593830468895}
+  - component: {fileID: 401174357428762972}
+  - component: {fileID: -8413236365216639039}
   m_Layer: 0
   m_Name: DroseraPlant
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +86,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7020522593830468895
+--- !u!61 &401174357428762972
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696733649906051010}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9657143, y: 1.0457143}
+    newSize: {x: 0.42, y: 0.42}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9657143, y: 1.0457143}
+  m_EdgeRadius: 0
+--- !u!114 &-8413236365216639039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,11 +140,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1696733649906051010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71fabbd0d40342549a1ae94e30d41665, type: 3}
+  m_Script: {fileID: 11500000, guid: 95d197144164fb84c9a751a976a8ac5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   price: 35
-  growDuration: 25
+  growDuration: 20
   corruptionDecrease: 4
   money: 10
   moneyDuration: 15
@@ -106,14 +152,13 @@ MonoBehaviour:
   - {fileID: -1118083827, guid: fb722773fecde8e4bbc4ef054a60edbb, type: 3}
   - {fileID: 1884809751, guid: fb722773fecde8e4bbc4ef054a60edbb, type: 3}
   - {fileID: -1995256922, guid: fb722773fecde8e4bbc4ef054a60edbb, type: 3}
-  - {fileID: 21300000, guid: e90ef6f61c9dc1e47ba77cf01360f0be, type: 3}
+  - {fileID: 1179660507, guid: fb722773fecde8e4bbc4ef054a60edbb, type: 3}
   health: 100
   damagePreSecond: 10
-  name: "\u0646\u0628\u0627\u062A \u0627\u0644\u062F\u0631\u0648\u0633\u064A\u0631\u0627 "
+  name: "\u0646\u0628\u0627\u062A \u0627\u0644\u062F\u0631\u0648\u0633\u064A\u0631\u0627"
   description: "\u0627\u0644\u0646\u0648\u0639: \u0645\u0646\u0642\u064A\r\n\u0627\u0644\u0642\u062F\u0631\u0629:
     \u064A\u0646\u0642\u064A \u0627\u0644\u0641\u0633\u0627\u062F \u0628\u0628\u0637\u0621\u060C\r\n\u0648\u064A\u0645\u0646\u062D\u0643
     10 \u063A\u0628\u0627\u0631 \u0630\u0647\u0628\u064A \u0643\u0644 15 \u062B\u0627\u0646\u064A\u0629\r\n\u062D\u062F\u062B
     \u062E\u0627\u0635: \u0632\u0631\u0627\u0639\u0629 \u0627\u062B\u0646\u062A\u064A\u0646
     \u0645\u0646\u0647\u0627 \u062A\u0643\u0633\u0628\u0643 \u0627\u0644\u0628\u0630\u0631\u0629
-    \u0627\u0644\u0635\u0641\u0631\u0627\u0621\r\n"
-  totalCollection: 2
+    \u0627\u0644\u0635\u0641\u0631\u0627\u0621"

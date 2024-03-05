@@ -35,6 +35,7 @@ public abstract class BasePlant : MonoBehaviour
     protected int row;
     protected int col;
 
+
     public int Price { get { return price; } }
     public string Name { get { return name; } }
     public bool IsCorruption { get { return isCorruption; } set { isCorruption = value; } }
@@ -71,5 +72,21 @@ public abstract class BasePlant : MonoBehaviour
     {
         GridManager.Vis[row][col] = false;
         Destroy(gameObject);
+    }
+
+    protected void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy") && collision.GetComponent<Enemy>().TargetPlant == gameObject)
+            corruptionCount++;
+    }
+
+    protected void OnTriggerExit2D(Collider2D other)
+    {
+        
+        if (other.CompareTag("Enemy") && other.GetComponent<Enemy>().TargetPlant == gameObject)
+        {
+            corruptionCount--;
+            Debug.Log("55555555555");
+        }
     }
 }

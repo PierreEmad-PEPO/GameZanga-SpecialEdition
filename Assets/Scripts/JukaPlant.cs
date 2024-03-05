@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class JukaPlant : BasePlant
@@ -38,7 +39,7 @@ public class JukaPlant : BasePlant
             }
         }
 
-        if (closeEnemy != null) 
+        if (closeEnemy != null && !closeEnemy.IsDestroyed()) 
         {
            closeEnemy.GetComponent<Enemy>().DestroyEnemy();
         }
