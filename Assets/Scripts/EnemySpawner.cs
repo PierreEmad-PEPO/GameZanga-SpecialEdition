@@ -54,7 +54,7 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnWave()
     {
-        int number = Random.Range(1, 10);
+        int number = Random.Range(1, 11);
         for (int i = 0; i < number; i++)
         {
             GameObject en = Instantiate(enemyPrefab);
