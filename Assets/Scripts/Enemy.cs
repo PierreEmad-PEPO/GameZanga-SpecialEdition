@@ -4,11 +4,12 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEditor.PlayerSettings;
 
 public class Enemy : MonoBehaviour
 {
-    protected Vector2 startPos;
-    protected Vector2 endPos;
+    protected Vector3 startPos;
+    protected Vector3 endPos;
     protected GameObject targetPlant = null;
     protected float speed = 2f;
 
@@ -27,7 +28,10 @@ public class Enemy : MonoBehaviour
 
     protected void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, endPos, Time.deltaTime * speed);
+        Vector3 pos = Vector2.MoveTowards(transform.position, endPos, Time.deltaTime * speed);
+        pos.z = transform.position.z;
+        transform.position = pos;
+        
         if (Vector2.Distance(transform.position, endPos) <= .05f)
             isReached = true;
 
@@ -71,7 +75,6 @@ public class Enemy : MonoBehaviour
                 pos.x = ScreenUtils.ScreenLeft - 1;
                 break;
         }
-
         return pos;
     }
 

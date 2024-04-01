@@ -38,7 +38,6 @@ public static class InputManager
         int c = (int)(world.x - startPoint.x);
 
         Tuple<int, int> ret = new Tuple<int, int>(r,c);
-        Debug.Log(ret);
         return ret;
     }
 }

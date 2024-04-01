@@ -87,7 +87,6 @@ public abstract class BasePlant : MonoBehaviour
         {
             corruptionCount--;
             if (corruptionCount < 0) corruptionCount = 0;
-            Debug.Log("55555555555");
         }
     }
 }
